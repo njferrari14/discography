@@ -1,4 +1,6 @@
-
+<?php ob_start();
+try {
+include './includes/title.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +9,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Queen</title>
+  <title>Queen <?= $title ?? '' ?></title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
@@ -15,12 +17,14 @@
 
   <body>
       <!--navigation-->
- <nav class="navbar sticky-top navbar-dark bg-danger">
-  <a class="navbar-brand" href="index.html">Band</a>
-  <a class="navbar-brand" href="music.html">Music</a>
-  <a class="navbar-brand" href="fun.html">Fun Facts</a>
-  <a class="navbar-brand" href="cite.html">Cite Info</a>
-</nav>
+  <?php
+  $file = './includes/menu.php';
+  if (file_exists($file) && is_readable($file)) {
+       require $file;
+  } else {
+       throw new Exception("$file can't be found");
+  }
+  ?>
 
 	<!--header image-->
    <div class="row">
@@ -111,40 +115,14 @@
 
 
 <!--feedback form-->
-<div class="container" style="background: #C9BF67;padding-top:15px; padding-bottom:15px;">
-      <div class="row">
-      <div class="col-12">    
-      <div class="col bg-danger text-white" style="padding-top: 15px; padding-left:25px; padding-bottom: 10px;">
-      <form>
-      <h4>JOIN THE FAN CLUB!!</h4>
-      <div class="form-group col">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" placeholder="First and last name">
-  </div>
-<div class="form-group col">
-      <label for="address">Address</label>
-      <input type="text" class="form-control" id="address" placeholder="City, State and Zip">
-</div>
-  
-<div class="form-group col">
-      <label for="birthday">Birthday</label>
-      <input type="text" class="form-control" id="birthday" placeholder="01/18/1978">
-</div>
-
-<div class="form-group col">
-      <label for="email">Email</label>
-      <input type="text" class="form-control" id="email" placeholder="email@example.com">
-</div>
-
-<div class="form-group col">
-      <label for="comments">Comments</label>
-      <input type="text" class="form-control" id="comments" placeholder="Comments">
-     </div>
-    </form>
-   </div>
-  </div>
- </div>
-</div>
+<?php
+$file = './includes/form.php';
+if (file_exists($file) && is_readable($file)) {
+     require $file;
+} else {
+     throw new Exception("$file can't be found");
+}
+?>
 
 
 <script src="js/jquery.slim.min.js"></script>
@@ -152,3 +130,9 @@
 <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
+<?php } catch (Exception $e) {
+    ob_end_clean();
+    header('Location: http://localhost/phpsols-4e/error.php');
+}
+ob_end_flush();
+?>
