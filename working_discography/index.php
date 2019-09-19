@@ -1,19 +1,15 @@
 <?php ob_start();
 try {
 include './includes/title.php'; ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Queen <?= $title ?? '' ?></title>
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
-  	</head>
+<!--header-->
+<?php
+$file = './includes/header.php';
+if (file_exists($file) && is_readable($file)) {
+     require $file;
+} else {
+     throw new Exception("$file can't be found");
+}
+?>
 
   <body>
       <!--navigation-->
