@@ -1,5 +1,5 @@
 <?php
-require_once './includes/connection.php';
+require_once './includes/header.php';
 require_once './includes/utility_funcs.php';
 // initialize flags
 $OK = false;
@@ -25,16 +25,23 @@ if (isset($_GET['album_id']) && !$_POST) {
 // if form has been submitted, update record
 if (isset($_POST['update'])) {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $album_id = $_POST['album_id'];
+    $album_name = $_POST['album_name'];
+    // delete old tracks
+    $sql2 = 'DELETE FROM tracks WHERE album_id = :album_id';
+    $stmt2 = $conn->prepare($sql2);
+    $stmt2->bindParam(':album_id', $album_id, PDO::PARAM_INT);
+    $stmt2->execute();
 
-	// convert string of tracks into array
+	// convert string of new tracks into array
 	$tnames = explode(",", safe($_POST['tracks']));
 	$numTracks = count($tnames);
-
-	// perform an update for each track
-	$sql3 = 'UPDATE tracks SET name = :t_name
-	    	WHERE album_id = :album_id';
+	$sql3 = 'INSERT INTO tracks (album_id, album_name, name) 
+    		 	VALUES (:a_id, :a_name, :t_name)';
 	$stmt3 = $conn->prepare($sql3);
-	$stmt3->bindParam(':album_id', $album_id, PDO::PARAM_STR);
+	$stmt3->bindParam(':a_id', $album_id, PDO::PARAM_INT);
+	$stmt3->bindParam(':a_name', $album_name, PDO::PARAM_STR);
+
 	try {
 	    $conn->beginTransaction();
 	    $i = 0;
@@ -50,14 +57,17 @@ if (isset($_POST['update'])) {
 	    $conn->rollback();
 	    throw $e;
 	}
+    $url = 'http://localhost/working_revamp/admin.php';
+    if ($trans_error) {
+        $url .= "?trans_error=$trans_error";
+    }
+    header("Location: $url");
 }
 
-require_once './includes/header.php';
 ?>
 <body>
 <?php
 require_once './includes/menu.php';
-
 if($album_id == 0) { ?>
     <p class="warning">Invalid request: record does not exist.</p>
 <?php } else { ?>
@@ -66,18 +76,20 @@ if($album_id == 0) { ?>
         <div class="col-12">    
             <div class="col bg-danger text-white" style="padding-top: 15px; padding-left:25px; padding-bottom: 10px;">
                 <h1 class="text-center">Update Tracks For "<?= $album_name ?>":</h1>
-                <form method="post" action="update.php" enctype="multipart/form-data">
+                <form method="post" action="update_tracks.php" enctype="multipart/form-data">
                     <p class="form-group col">
-                        <label for="tracks">Track Names (separated by commas):</label>
+                        <label for="tracks">Enter Track Names (separated by commas):</label>
                         <textarea class="form-control" name="tracks" type="text" id="tracks" value="<?php
                         	if (isset($error)) {
                             	echo safe($_POST['tracks']);
                         	} 
                         	?>"></textarea>
                         <input name="album_id" type="hidden" value="<?= $album_id ?>">
+                        <input name="album_name" type="hidden" value="<?= $album_name ?>">
                     </p>
-                    <p class="form-group col">
-                        <input type="submit" name="update" value="Update Tracks">
+                    <p class=" text-center form-group col">
+                        <input type="submit" name="update" id="update" value="Update Tracks">
+                        <p class="text-center">Warning! <br>This will delete all existing tracks associated with this album and insert the new values</p>
                     </p>
                 </form>
             </div>
@@ -86,9 +98,7 @@ if($album_id == 0) { ?>
 </div>
 <div class="col">
     <p>
-        <h5 class="text-center"><a href="admin.php">&laquo; Back to list</a></h5>
-        <h5 class="text-center">OR</h5>
-        <h5 class="text-center"><a href="update_tracks.php?album_id=<?= $album_id; ?>">Edit Tracks &raquo;</a></h5>
+        <h5 class="text-center"><a href="admin.php">&laquo; Back to Album List</a></h5>
     </p>
 </div>
 <?php } ?>

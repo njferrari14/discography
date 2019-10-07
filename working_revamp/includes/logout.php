@@ -10,10 +10,10 @@ if (isset($_POST['logout'])) {
 	// end session and redirect
 	session_destroy();
 
-	header('Location: http://localhost/phpsols-4e/sessions/login.php');
+	header('Location: http://localhost/working_revamp/login.php');
 	exit;
 }
 ?>
-<form method="post">
-	<input name="logout" type="submit" value="Log out">
+<form class="text-right" method="post">
+	<input class="btn btn-dark mr-3 mt-1" name="logout" type="submit" value="Log out">
 </form>

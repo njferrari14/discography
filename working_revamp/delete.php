@@ -1,5 +1,5 @@
 <?php
-require_once './includes/connection.php';
+require_once './includes/header.php';
 require_once './includes/utility_funcs.php';
 // create database connection
 $conn = dbConnect('write', 'pdo');
@@ -50,7 +50,6 @@ if ($deleted || isset($_POST['cancel_delete']) || !isset($_GET['album_id']))  {
     exit;
 }
 
-require_once './includes/header.php';
 ?>
 
 <style>

@@ -2,7 +2,6 @@
 ob_start();
 try {
 include './includes/title.php';
-require_once './includes/session_timeout_db.php';
 require_once './includes/header.php';
 
 if (isset($_POST['submit'])) {

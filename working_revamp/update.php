@@ -1,5 +1,5 @@
 <?php
-require_once './includes/connection.php';
+require_once './includes/header.php';
 require_once './includes/utility_funcs.php';
 // initialize flags
 $OK = false;
@@ -58,7 +58,6 @@ if (isset($stmt)) {
     // get error message (will be null if no error)
     $error = $stmt->errorInfo()[2];
 }
-require_once './includes/header.php';
 ?>
 
 <body>

@@ -2,8 +2,6 @@
 try {
 include './includes/title.php';
 require_once './includes/header.php';
-require_once './includes/session_timeout_db.php';
-
 
 // create database connection
 $conn = dbConnect('read', 'pdo');
@@ -26,6 +24,8 @@ $error = $conn->errorInfo()[2];
 <?php
 require_once './includes/menu.php';
 ?>
+
+<h1 class="text-center">Welcome, <?= $_SESSION['username'] ?>!</h1>
 
 <div class="container" style="background: #C9BF67; padding-top: 15px; margin-top: 100px;">
     <div class="row">

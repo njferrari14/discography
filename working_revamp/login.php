@@ -8,6 +8,7 @@ if (isset($_POST['login'])) {
     session_start();
     $username = trim($_POST['username']);
     $password = trim($_POST['pwd']);
+    $_SESSION['username'] = $username;
     // location to redirect on success
     $redirect = 'http://localhost/working_revamp/admin.php';
     require_once './includes/authenticate_pdo.php';
