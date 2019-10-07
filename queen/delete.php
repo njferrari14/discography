@@ -46,7 +46,7 @@ if (isset($_POST['delete'])) {
 }
 // redirect the page if deleted, cancel button clicked, or $_GET['article_id'] not defined
 if ($deleted || isset($_POST['cancel_delete']) || !isset($_GET['album_id']))  {
-    header('Location: http://localhost/working_revamp/admin.php');
+    header('Location: http://site12.wdd.francistuttle.edu/projects/queen/admin.php');
     exit;
 }
 

@@ -47,7 +47,7 @@ if (isset($_POST['update'])) {
 }
 // redirect page after updating or if $_GET['article_id'] not defined
 if (($done ||  $trans_error)||(!$_POST && !isset($_GET['album_id']))) {
-    $url = 'http://localhost/working_revamp/admin.php';
+    $url = 'http://site12.wdd.francistuttle.edu/projects/queen/admin.php';
     if ($trans_error) {
         $url .= "?trans_error=$trans_error";
     }

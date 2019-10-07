@@ -5,7 +5,7 @@ if (isset($_POST['login'])) {
     $username = trim($_POST['username']);
     $password = trim($_POST['pwd']);
     // location to redirect on success
-    $redirect = 'http://localhost/working_revamp/admin/admin.php';
+    $redirect = 'http://localhost/queen/admin.php';
     require_once '../includes/authenticate_pdo.php';
 }
 ?>
