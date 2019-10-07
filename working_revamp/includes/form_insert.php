@@ -19,14 +19,6 @@ if (isset($_POST['submit'])) {
 
     // exectue and get number of affected rows
     $stmt->execute();
-    $OK = $stmt->rowCount();
-    // redirect if successful or display error
-    // if ($OK) {
-    //     header('Location: http://localhost/working_revamp/thanks.php');
-    //     exit;
-    // } else {
-    //     $error = $stmt->errorInfo()[2];
-    // }
 }
 $errors = [];
 $missing = [];

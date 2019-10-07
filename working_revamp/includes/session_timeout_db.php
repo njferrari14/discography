@@ -6,7 +6,7 @@ $timelimit = 15 * 60;
 // get the current time
 $now = time();
 // where to redirect if rejected
-$redirect = 'http://localhost/working_revamp/authenticate/login_db.php';
+$redirect = 'http://localhost/working_revamp/login.php';
 // if session variable not set, redirect to login page
 if (!isset($_SESSION['authenticated'])) {
     header("Location: $redirect");

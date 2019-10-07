@@ -58,6 +58,11 @@ if (isset($_POST['submit'])) {
 	    $conn->rollback();
 	    throw $e;
 	}
+    $url = 'http://localhost/working_revamp/admin.php';
+    if ($trans_error) {
+        $url .= "?trans_error=$trans_error";
+    }
+    header("Location: $url");
 }
 
 ?>
@@ -65,51 +70,60 @@ if (isset($_POST['submit'])) {
 <?php
 require_once './includes/menu.php';
 ?>
-<h1>Insert New Album</h1>
-<form method="post" action="admin.php" enctype="multipart/form-data">
-	<p>
-		<label for="title">Title:</label>
-		<input name="title" type="text" id="title" value="<?php
-			if (isset($error)) {
-            	echo safe($_POST['title']);
-        	} 
-        	?>">
-    </p>
-	<p>
-		<label for="label">Record Label:</label>
-		<input name="label" type="text" id="label" value="<?php
-			if (isset($error)) {
-            	echo safe($_POST['label']);
-        	} 
-        	?>">
-    </p>
-	<p>
-		<label for="year">Year Released:</label>
-		<input name="year" type="text" id="year" value="<?php
-			if (isset($error)) {
-            	echo safe($_POST['year']);
-        	} 
-        	?>">
-    </p>
-	<p>
-		<label for="image">Name of Image File:</label>
-		<input name="image" type="text" id="image" value="<?php
-			if (isset($error)) {
-            	echo safe($_POST['image']);
-        	} 
-        	?>">
-    </p>
-	<p>
-		<label for="tracks">Track Names (separated by commas):</label>
-		<textarea name="tracks" type="text" id="tracks" value="<?php
-			if (isset($error)) {
-            	echo safe($_POST['tracks']);
-        	} 
-        	?>"></textarea>
-    </p>
-    <p>
-    	<input type="submit" name="submit" value="Insert Album">
-    </p>
+<div class="container mt-5" style="background: #C9BF67;padding-top:15px; padding-bottom:15px;">
+    <div class="row">
+        <div class="col-12">    
+            <div class="col bg-danger text-white" style="padding-top: 15px; padding-left:25px; padding-bottom: 10px;">
+                <h1>Insert New Album</h1>
+                <form method="post" action="insert.php" enctype="multipart/form-data">
+                    <p class="form-group col">
+                        <label for="title">Title:</label>
+                        <input class="form-control" name="title" type="text" id="title" value="<?php
+                        	if (isset($error)) {
+                            	echo safe($_POST['title']);
+                        	} 
+                        	?>">
+                    </p>
+                    <p class="form-group col">
+                        <label for="label">Record Label:</label>
+                        <input class="form-control" name="label" type="text" id="label" value="<?php
+                        	if (isset($error)) {
+                            	echo safe($_POST['label']);
+                        	} 
+                        	?>">
+                    </p>
+                    <p class="form-group col">
+                        <label for="year">Year Released:</label>
+                        <input class="form-control" name="year" type="text" id="year" value="<?php
+                        	if (isset($error)) {
+                            	echo safe($_POST['year']);
+                        	} 
+                        	?>">
+                    </p>
+                    <p class="form-group col">
+                        <label for="image">Name of Image File:</label>
+                        <input class="form-control" name="image" type="text" id="image" value="<?php
+                        	if (isset($error)) {
+                            	echo safe($_POST['image']);
+                        	} 
+                        	?>">
+                    </p>
+                    <p class="form-group col">
+                        <label for="tracks">Track Names (separated by commas):</label>
+                        <textarea class="form-control" name="tracks" type="text" id="tracks" value="<?php
+                        	if (isset($error)) {
+                            	echo safe($_POST['tracks']);
+                        	} 
+                        	?>"></textarea>
+                    </p>
+                    <p class="form-group col">
+                        <input type="submit" name="submit" value="Insert Album">
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="js/jquery.slim.min.js"></script>
 <script src="js/popper.min.js"></script>
