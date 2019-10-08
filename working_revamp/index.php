@@ -105,6 +105,7 @@ if (file_exists($file) && is_readable($file)) {
 	   </div>
    </div>
   </div>
+</div>
 </div><br>
 		
 

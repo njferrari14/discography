@@ -10,14 +10,6 @@ $result = $conn->query($sql);
 $error = $conn->errorInfo()[2];
 ?>
 
-<style type="text/css">
-    .linq {
-    }
-    .linq:hover {
-        color: red !important;
-        text-decoration: none !important;
-    }
-</style>
 
 <body>
 
@@ -27,10 +19,10 @@ require_once './includes/menu.php';
 
 <h1 class="text-center">Welcome, <?= $_SESSION['username'] ?>!</h1>
 
-<div class="container" style="background: #C9BF67; padding-top: 15px; margin-top: 100px;">
+<div class="container queen-container qc-lg">
     <div class="row">
         <div class="col-12">    
-            <div class="col bg-danger text-white" style="padding-top: 15px; padding-left:25px; padding-bottom: 10px;">
+            <div class="col bg-danger text-white qc-sm">
                 <div class="row">
                     <h1 class="col-12 text-center">Manage Albums</h1>
                 </div>
@@ -50,7 +42,7 @@ require_once './includes/menu.php';
     }
 ?>
 
-<div class="container" style="background: #C9BF67; padding-top: 15px;">
+<div class="container queen-container">
     <div class="row">
         <div class="col-12">    
             <table class="table table-hover table-striped table-dark">

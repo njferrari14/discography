@@ -24,16 +24,15 @@ if (file_exists($file) && is_readable($file)) {
 
 	<!--header image-->
    <div class="row">
-		 <div class="container" style="padding-top: 15px;">
-			 <img class="rounded-circle" src="./images/Queen3.jpg" alt="circle" style=" width:100%;
-      display:inline-block;">
+		 <div class="container header-img-container">
+			 <img class="rounded-circle header-img" src="./images/Queen3.jpg" alt="circle">
 		</div>
   </div>
   
 	 
 
 <!--freddie info section-->
-<div class="container"  style="background: #C9BF67; padding-top:15px; padding-bottom:15px;">
+<div class="container queen-container qc-lg-update">
     <div class="row align-items-end">
       <div class="col-12">
        <div class="card text-dark">
@@ -49,7 +48,7 @@ if (file_exists($file) && is_readable($file)) {
 
 
 <!--brian may info Section-->
-	<div class="container"  style="background: #C9BF67; padding-top:15px;padding-bottom:15px;">
+	<div class="container queen-container qc-lg-update">
        <div class="row align-items-end">
          <div class="col-12">
 	        <div class="card text-dark">
@@ -64,7 +63,7 @@ if (file_exists($file) && is_readable($file)) {
 </div><br>
 
 <!--john Deacon info section-->
-<div class="container"  style="background: #C9BF67; padding-top:15px;padding-bottom:15px;">
+<div class="container queen-container qc-lg-update">
       <div class="row align-items-end">
         <div class="col-12">
          <div class="card text-dark">
@@ -79,7 +78,7 @@ if (file_exists($file) && is_readable($file)) {
 </div><br>
 
 <!--roger taylor info section-->
-<div class="container"  style="background: #C9BF67; padding-top:15px;padding-bottom:15px;">
+<div class="container queen-container qc-lg-update">
       <div class="row align-items-end">
         <div class="col-12">
           <div class="card text-dark">

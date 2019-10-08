@@ -45,8 +45,6 @@ if ($error) {
         </div>
     </div>
 </div>
-</body>
-</html>
 
 
 <script src="js/jquery.slim.min.js"></script>

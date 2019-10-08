@@ -70,10 +70,10 @@ if (isset($error)) {
 if($album_id == 0) { ?>
     <p class="warning">Invalid request: record does not exist.</p>
 <?php } else { ?>
-<div class="container mt-5 col-6" style="background: #C9BF67; padding-top:15px; padding-bottom: 15px;">
+<div class="container mt-5 col-6 queen-container qc-lg-update">
     <div class="row">
         <div class="col-12">    
-            <div class="col bg-danger text-white" style="padding-top: 15px; padding-left:25px; padding-bottom: 10px;">
+            <div class="col bg-danger text-white qc-sm">
                 <h1 class="text-center">Update Album: "<?= $album_name ?>"</h1>
                 <form method="post" action="update.php" enctype="multipart/form-data">
                     <p class="form-group col">

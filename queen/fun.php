@@ -23,11 +23,11 @@ if (file_exists($file) && is_readable($file)) {
   ?>
 
 <!--top image funfacts 1-5-->
-<div class="container" style="background: #C9BF67; padding-top:10px; padding-bottom:15px;">
+<div class="container queen-container qc-lg-update">
     <div class="row">
     <div class="col-12">
     <div class="card">
-     <img class="card-img-top" src="./images/band.jpg" alt="band_logo" style= "width:100%;z-index:0;">
+     <img class="card-img-top fun-img" src="./images/band.jpg" alt="band_logo">
     <div class="card-body  text-dark">
     <h4 class="card-title">Fun Facts</h4>
     <p class="card-text">
@@ -48,11 +48,11 @@ if (file_exists($file) && is_readable($file)) {
 </div><br>
 
 <!--image 2 funfacts 6-8-->
-<div class="container"  style="background: #C9BF67; padding-top:15px; padding-bottom:15px;">
+<div class="container queen-container qc-lg-update">
       <div class="row">
       <div class="col-12">
       <div class="card">
-       <img class="card-img-top" src="./images/Queen-live.jpg" alt="band_logo" style= "width:100%;">
+       <img class="card-img-top fun-img" src="./images/Queen-live.jpg" alt="band_logo">
       <div class="card-body text-dark">
       <h4 class="card-title">Fun Facts</h4>
       <p class="card-text">
@@ -68,17 +68,17 @@ if (file_exists($file) && is_readable($file)) {
 </div><br>
 
 <!--image 3 funfacts 9&10-->
-<div class="container"  style="background: #C9BF67; padding-top:15px; padding-bottom:15px;">
+<div class="container queen-container qc-lg-update">
       <div class="row">
       <div class="col-12">
       <div class="card">
-       <img class="card-img-top" src="./images/FreddieMJ.jpg" alt="freddiemj" style= "width:100%;">
+       <img class="card-img-top fun-img" src="./images/FreddieMJ.jpg" alt="freddiemj">
       <div class="card-body  text-dark">
       <h4 class="card-title">Fun Facts</h4>
       <p class="card-text">
       9. MJ insisted to release “Another one bites the dust” At first Queen didn’t plan to release the song “Another one bites the dust”. But when Michael Jackson heard the song at the backstage of an L.A. concert, he convinced the band to release it. The song became one of the most successful singles of the band and sold over seven million.<br>
       10. Queen honored by England: In 1999, England honored the Queen band by releasing a postage stamp commemorating Freddie Mercury. But this stamp created unpleasantness among the royal family as the photo chosen for the stamp had Roger Taylor in background. According to British tradition, the only living people who can appear on their stamps are the member of Royal Family.</p>
-     <img class="card-img-top" src="./images/stamp.jpg" alt="stamp" style= "width:100%;">
+     <img class="card-img-top fun-img" src="./images/stamp.jpg" alt="stamp">
       </div>
      </div>
     </div>

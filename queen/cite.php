@@ -25,7 +25,7 @@ if (file_exists($file) && is_readable($file)) {
 
 
 <!--top image-->
-<div class="container"  style="background: #C9BF67; padding-top:12px; padding-bottom:15px;">
+<div class="container cite-container1">
  <div class="row">
  <div class="col-12">
  <div class="card  text-dark">
@@ -48,7 +48,7 @@ if (file_exists($file) && is_readable($file)) {
  </div>
 </div><br>
 <!--video-->
-<div class="container" style="background: #C9BF67; padding-top:14px; padding-bottom:14px;">
+<div class="container cite-container2">
      <div class="row">
      <div class="col-12">
      <div class="embed-responsive embed-responsive-16by9">
@@ -63,7 +63,7 @@ if (file_exists($file) && is_readable($file)) {
         <div class="row">
         <div class="col-12">
         <div class="shadow-lg p-3 mb-5 bg rounded">
-        <blockquote class="blockquote blockquote-reverse" style="padding-left:10px; font-size:40px;">
+        <blockquote class="blockquote blockquote-reverse cite-quote">
         <p class="mb-0">We're a bit flashy, but the musics's not one big noise. </p>
         <footer class="blockquote-footer">Freddie Mercury
         <cite title="Source Title">brainyquote</cite>

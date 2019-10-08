@@ -24,10 +24,10 @@ if ($error) {
     <p>Your session has expired. Please log in again.</p>
 <?php } ?>
 
-<div class="container col-3" style="min-width: 350px; max-width: 400px; background: #C9BF67; padding-top:15px; padding-bottom:15px; margin-top: 150px;">
+<div class="container col-3 login-container-lg">
     <div class="row">
         <div class="col-12">    
-            <div class="col bg-danger text-white" style="min-width: 300px; max-width: 400px; padding-top: 15px; padding-left: 25px; padding-bottom: 10px;">
+            <div class="col bg-danger text-white login-container-sm">
                 <form method="post" action="login.php">
                     <p class="form-group col">
                         <label for="username">Username:</label>

@@ -1,0 +1,83 @@
+.queen-container {
+	background: #C9BF67; 
+	padding-top: 15px;
+}
+.qc-lg {
+	margin-top: 100px;
+}
+.qc-sm {
+	padding-top: 15px; 
+	padding-left: 25px; 
+	padding-bottom: 10px;
+}
+.qc-lg-update {
+	padding-bottom: 15px;
+}
+.cite-container1 {
+	background: #C9BF67; 
+	padding-top: 12px; 
+	padding-bottom: 15px;
+}
+.cite-container2 {
+	background: #C9BF67; 
+	padding-top: 14px; 
+	padding-bottom: 14px;
+}
+.cite-quote {
+	padding-left: 10px; 
+	font-size: 40px;
+}
+.fun-img {
+	width: 100%;
+	z-index: 0;
+}
+.header-img-container {
+	padding-top: 15px;
+}
+.header-img {
+	width: 100%;
+     display: inline-block;
+}
+.input-warning:hover {
+	background: red;
+}
+.login-container-lg {
+	min-width: 350px; 
+	max-width: 400px; 
+	background: #C9BF67; 
+	padding-top: 15px; 
+	padding-bottom: 15px; 
+	margin-top: 150px;
+}
+.login-container-sm {
+	min-width: 300px; 
+	max-width: 400px; 
+	padding-top: 15px; 
+	padding-left: 25px; 
+	padding-bottom: 10px;
+}
+.linq {
+}
+.linq:hover {
+    color: red !important;
+    text-decoration: none !important;
+}
+
+@media screen and (max-width: 501px) {
+    tr, th, td {
+            padding: 0 !important;
+    }
+    td a {
+    	padding-right: 5px;
+    }
+    .navbar-brand {
+    	margin-right: .5rem !important;
+    }
+}
+
+@media screen and (max-width: 806px) {
+.col-6{
+	max-width: 100% !important; 
+}
+
+}

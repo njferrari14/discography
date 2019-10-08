@@ -52,11 +52,6 @@ if ($deleted || isset($_POST['cancel_delete']) || !isset($_GET['album_id']))  {
 
 ?>
 
-<style>
-    input:hover {
-        background: red;
-    }
-</style>
 <body>
 <?php
 require_once './includes/menu.php';
@@ -82,12 +77,12 @@ if (isset($error)) {
 <div class="container text-center mt-5">
     <form method="post" action="delete.php">
         <p>
-            <input class="mr-5" name="cancel_delete" type="submit" value="Cancel">
+            <input class="mr-5 input-warning" name="cancel_delete" type="submit" value="Cancel">
             <?php if (isset($album_id) && $album_id > 0) { ?>
                 <input name="album_id" type="hidden" value="<?= $album_id; ?>">
             <?php } ?>
             <?php if (isset($album_id) && $album_id > 0) { ?>
-                <input type="submit" name="delete" value="Confirm Deletion">
+                <input class="input-warning" type="submit" name="delete" value="Confirm Deletion">
             <?php } ?>
         </p>
     </form>

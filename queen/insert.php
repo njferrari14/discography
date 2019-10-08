@@ -69,11 +69,11 @@ if (isset($_POST['submit'])) {
 <?php
 require_once './includes/menu.php';
 ?>
-<div class="container mt-5" style="background: #C9BF67;padding-top:15px; padding-bottom:15px;">
+<div class="container mt-5 queen-container qc-lg-update">
     <div class="row">
         <div class="col-12">    
-            <div class="col bg-danger text-white" style="padding-top: 15px; padding-left:25px; padding-bottom: 10px;">
-                <h1>Insert New Album</h1>
+            <div class="col bg-danger text-white qc-sm">
+                <h1 class="text-center">Insert New Album</h1>
                 <form method="post" action="insert.php" enctype="multipart/form-data">
                     <p class="form-group col">
                         <label for="title">Title:</label>
@@ -123,6 +123,9 @@ require_once './includes/menu.php';
         </div>
     </div>
 </div>
+<p>
+    <h5 class="text-center"><a href="admin.php">&laquo; Back to list</a></h5>
+</p>
 
 <script src="js/jquery.slim.min.js"></script>
 <script src="js/popper.min.js"></script>

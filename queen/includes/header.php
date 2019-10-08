@@ -18,5 +18,6 @@ if (basename($_SERVER['PHP_SELF']) !== 'admin.php' && basename($_SERVER['PHP_SEL
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<title>Queen <?= $title ?? '' ?></title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
 	<link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
 </head>
