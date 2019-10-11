@@ -22,8 +22,8 @@ if (file_exists($file) && is_readable($file)) {
 ?>
 
 <body>
-	<div class="container-fluid text-center .h1 .mt-4">
-		<h1>Thank you for joining the fan club!</h1>
+	<div class="container-fluid text-center h1 mt-5">
+		<h1 class="mt-5">Thank you for joining the fan club!</h1>
 
 	</div>
 </body>
