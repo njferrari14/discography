@@ -47,7 +47,6 @@ require_once './includes/menu.php';
         <div class="col-12">    
             <table class="table table-hover table-striped table-dark">
                 <tr>
-                    <th class="text-center">ID</th>
                     <th class="text-center">Title</th>
                     <th class="text-center">Record Label</th>
                     <th class="text-center">Year Released</th>
@@ -56,7 +55,6 @@ require_once './includes/menu.php';
                 </tr>
                 <?php while ($row = $result->fetch()) { ?>
                 <tr>
-                    <td class="text-center"><?= $row['album_id']; ?></td>
                     <td class="text-center"><?= $row['album_name']; ?></td>
                     <td class="text-center"><?= $row['record_label']; ?></td>
                     <td class="text-center"><?= $row['year_released']; ?></td>
