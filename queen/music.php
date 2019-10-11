@@ -33,7 +33,7 @@ if (file_exists($file) && is_readable($file)) {
     <?php 
     // loop through albums
     foreach ($conn->query($sql) as $row) { ?>
-        <div class="col-6">
+        <div class="col-6 mw-330 text-center mt-5 mx-auto">
             <img src="./images/<?= $row['album_cover']?>" alt="Card image cap" style="width:100%;">
             <!--shadow-->
             <div class="shadow-lg p-3 mb-5 bg-white rounded">
